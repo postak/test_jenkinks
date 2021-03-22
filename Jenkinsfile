@@ -17,7 +17,7 @@ pipeline {
                                  ,returnStdout:true
                                         )}"""
                             return  (status == "AVAILABLE" );
-                            println "stampa status2 : " +   status
+                            println "stampa status : " +   status
                          }
                         }
                 }
