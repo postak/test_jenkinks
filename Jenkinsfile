@@ -12,12 +12,12 @@ pipeline {
                 timeout(time: 30, unit: 'SECONDS') {
                         waitUntil {
                             script {
-                            def status = """${sh(
-                                script: 'echo "AVAILABLE" |grep \'AVAILABLE\''
-                                 ,returnStdout:true
-                                        )}"""
-                            return  (status == "AVAILABLE" );
+                            def status = sh(
+                                script: 'echo "AVAILABLE" |grep AVAILABLE' ,
+                                returnStatus:true
+                            )
                             println "stampa status : " +   status
+                            return  (status == 0 )
                          }
                         }
                 }
