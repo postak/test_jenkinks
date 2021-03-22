@@ -13,7 +13,7 @@ pipeline {
                         waitUntil {
                             script {
                             def status = sh(
-                                script: 'echo "AVAILABLE" |grep AVAILABLE' ,
+                                script: 'echo "AVAILABLE" |grep AVAILABLA' ,
                                 returnStatus:true
                             )
                             println "stampa status : " +   status
