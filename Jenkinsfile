@@ -1,11 +1,11 @@
 pipeline {
-    agent any 
+    agent any
      environment ('Set Variable database') {
-        dbname="JSONATTACK"    
-    }   
-    stages {   
-        stage('Get Wallet') {       
-                environment { 
+        dbname="JSONATTACK"
+    }
+    stages {
+        stage('Get Wallet') {
+                environment {
                       corret_status="AVAILABLE"
                 }
                 steps {
@@ -13,18 +13,18 @@ pipeline {
                         waitUntil {
                             script {
                             def status = """${sh(
-                                            script: 'echo "AVAILABLE" |grep \'AVAILABLE\''                         
-                                            ,returnStatus:true 
-                                        )}""" 
-                            return  (status == "AVAILABLE" );  
-                            println "stampa status : " +   status 
+                                script: 'echo "AVAILABLE" |grep \'AVAILABLE\''
+                                 ,returnStdout:true
+                                        )}"""
+                            return  (status == "AVAILABLE" );
+                            println "stampa status : " +   status
                          }
                         }
-                }                      
+                }
                 script {
                     sh 'touch pippo'
                 }
-            }  
-        }  
-    }   
-}       
+            }
+        }
+    }
+}
