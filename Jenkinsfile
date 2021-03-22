@@ -1,7 +1,6 @@
 pipeline {
     agent any 
      environment ('Set Variable database') {
-        // variabili per identificare l'autonomous  
         dbname="JSONATTACK"    
     }   
     stages {   
