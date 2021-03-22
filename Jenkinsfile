@@ -16,7 +16,7 @@ pipeline {
                                 script: 'echo "AVAILABLE"' ,
                                 returnStdout:true
                             )
-                            println "stampa status : " +   status
+                            println "stampa status : [" +   status + "]"
                             if (status =~ "AVAILABLE") {
                                 return true
                             }
