@@ -17,7 +17,7 @@ pipeline {
                                 returnStdout:true
                             )
                             println "stampa status  : [" +   status + "]"
-                            if (status.equals( 'AVAILABLE' )) {
+                            if (status == 'AVAILABLE' ) {
                                 return true
                             }
                             else {
